@@ -1,3 +1,7 @@
 spring:
   application:
     name: gcp-service
+  datasource:
+    spring.datasource.url=jdbc:postgresql://localhost:5432/my
+    spring.datasource.username=postgres
+    spring.datasource.password=postgres
