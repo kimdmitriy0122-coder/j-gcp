@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 public record GettingResponse(
@@ -18,5 +19,5 @@ public record GettingResponse(
         pattern = "dd.MM.yyyy HH:mm:ss",
         timezone = "UTC"
     )
-    OffsetDateTime registrationDate
+    LocalDateTime registrationDate
 ){}

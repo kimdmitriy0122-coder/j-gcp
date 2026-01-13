@@ -8,6 +8,7 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {
+    @Mapping(target = "passportDate", source = "registerRequest.passportDate")
     Customer toEntity(RegisterRequest registerRequest);
     @Mapping(target = "registrationDate", source = "customerEntity.registrationDate")
     GettingResponse toDto(Customer customerEntity);

@@ -4,7 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum ErrorConstant {
-    CUSTOMER_NOT_FOUND(10001, "there is no customer with this id"),;
+    CUSTOMER_NOT_FOUND(10001, "there is no customer with this id"),
+    BAD_BIRTHDATE(10002, "there is a bad birthdate");
 
     final String message;
     final int code;
