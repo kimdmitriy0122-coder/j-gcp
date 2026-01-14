@@ -3,7 +3,7 @@ package com.j_gcp.gcp_service.dto;
 import com.j_gcp.gcp_service.constants.enums.CitizenshipType;
 import com.j_gcp.gcp_service.constants.enums.DocumentType;
 import com.j_gcp.gcp_service.constants.enums.GenderType;
-import com.j_gcp.gcp_service.validation.BirthdateConstraint;
+import com.j_gcp.gcp_service.validation.BeforeNowDate;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -23,10 +23,10 @@ public record RegisterRequest(
         message = "invalid passport serial") String passportSerial,
     @Digits(integer = 7, fraction = 0) int passportNumber,
     @Digits(integer = 14, fraction = 0) Long pinfl,
-    @BirthdateConstraint(message = "bad date") LocalDate birthDate,
+    @BeforeNowDate(message = "birthdate must be in the past") LocalDate birthDate,
     GenderType genderType,
     DocumentType documentType,
     LocalDate expiryDate,
-    LocalDate passportDate,
+    @BeforeNowDate(message = "passport date must be in the past") LocalDate passportDate,
     CitizenshipType citizenshipType
 ) {}

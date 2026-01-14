@@ -12,8 +12,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = BirthdateValidator.class)
-public @interface BirthdateConstraint {
-    String message() default "birthdate must be in the past";
+public @interface BeforeNowDate {
+    String message() default "date must be in the past";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
