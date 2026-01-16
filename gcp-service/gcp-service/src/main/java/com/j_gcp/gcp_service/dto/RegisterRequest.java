@@ -16,7 +16,7 @@ public record RegisterRequest(
         message = "only latin letters available") String firstName,
     @Pattern(regexp = "^[a-zA-Z ]+",
         message = "only latin letters available") String lastName,
-    @Size(max = 100, message = "too many simbols in address field") String address,
+    @Size(max = 100, message = "too many symbols in address field") String address,
     @Digits(integer = 12, fraction = 0) Long phoneNumber,
     @Email(message = "email invalid") String email,
     @Pattern(regexp = "^[a-zA-Z0-9]{2,4}",
